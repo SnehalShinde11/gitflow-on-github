@@ -1,0 +1,18 @@
+name: "my first workflow"
+on: 
+ workflow_dispatch:
+jobs:
+  job-name-1: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: "my first step"
+        run: echo "hello world"
+      - name: "my second step"
+        run: 
+          mkdir my-folder
+          echo "this is a multi-line command"
+          cd my-folder
+          echo "now we are in the my-folder directory"
+          echo "this is the end of the multi-line command" > demo.txt
+          echo "the content of demo.txt is:"
+          cat demo.txt
